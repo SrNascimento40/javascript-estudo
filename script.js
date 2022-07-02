@@ -111,3 +111,136 @@ function revisao(valor1, valor2, valor3){
 revisao(2, "5", "zero");
 
 //condicionais e escopo
+
+//if só executa quando a condição for verdadeira
+//else if executa quando a condição anterior for falsa mas a imposta nesse caso for verdadeira
+//else executa quando a condição for falsa
+const numeroMenor = 7;
+//definido global
+var numeroMaior = 354;
+if (numeroMenor == numeroMaior) {
+    console.log("Ambos números são iguais");
+} else if ( numeroMenor > numeroMaior) {
+    console.log(`${numeroMenor} é maior que ${numeroMaior}`);
+} else {
+    console.log(`${numeroMaior} é maior que ${numeroMenor}`);
+    let banana = "fruit"
+    //definida dentro do escopo de if else
+    var numeroMaior = 30144;
+
+     
+}
+try {
+    console.log(banana);
+} catch { console.log("Como a variavel só existe dentro do escopo, ela não retorna nada fora dele");}
+//como foi definida dentro do escopo, fora dele a propriedade banana não foi definida
+console.log(numeroMaior);
+
+//switch
+//alternativa ao if else
+
+switch (numeroMaior) {
+    case 15:
+        //case = "caso esta seja a verdade"
+        console.log("O número é 15");
+        break;
+        //break quebra
+
+    case 30144:
+        console.log("O número é 30144");
+        break;
+    
+    default:
+        //se todos cases forem falsos, default vai ser rodado
+        console.log("Eu não sei qual o número");
+        break;
+}
+
+
+//exercicio de condicional
+// Este objeto não precisa ser mexido
+let carro = {
+    rodas: 4,
+    portas: 2,
+    cor: "cinza",
+    ano: 2012,
+    estado: "novo"
+};
+
+
+function mudarPropriedade(nomePropriedade, novoValor){
+    switch(nomePropriedade){
+        // O case rodas é um exemplo para as próximas partes
+        case "rodas":
+            if(novoValor > 1){
+                carro.rodas = novoValor;   
+                return "Alteracao concluida"; 
+            }
+            else{
+                return "Minimo de rodas precisa ser 2";
+            }
+            break;
+        case "portas":
+            if(novoValor > 0){
+                carro.portas = novoValor; 
+                return "Alteracao concluida";   
+            }
+            else{
+                return "Minimo de portas precisa ser 1";
+            }
+            break;
+            // Para alterar as portas, é necessário que o
+            // novo valor seja maior que 0
+            // senão deve retornar a string "Minimo de portas precisa ser 1"
+        case "cor":
+            if(novoValor == "cinza"){
+                carro.cor = novoValor;   
+                return "Alteracao concluida"; 
+            }
+            else if(novoValor == "preto"){
+                carro.cor = novoValor;   
+                return "Alteracao concluida"; 
+            }
+            else if(novoValor == "vermelho"){
+                carro.cor = novoValor;
+                return "Alteracao concluida";
+                
+            }
+            else{
+                return "Cor invalida";
+            }
+            break;
+            // para alterar a cor, novo valor pode ser igual a cinza ou preto ou vermelho
+            // se for diferente, retornar "Cor invalida"
+        
+        case "ano":
+            carro.ano = novoValor;
+            if(novoValor == 2019){
+                carro.estado = "novo";    
+                return "Alteracao concluida";
+            }
+            else{
+                carro.estado = "usado";    
+                return "Alteracao concluida";
+            }
+            break;
+        // criar um case para o "ano"
+        // alterar o ano do carro para o ano informado
+        // se o ano for igual a 2019, alterar o estado para "novo" 
+        // senao alterar o estado para "usado"
+        default:
+            return "Propriedade invalida";
+            // retornar a fraase "Propriedade invalida";
+    }
+    // retornar a frase Alteracao concluida somente se foi possivel
+    // alterar um dado do objeto.
+}
+
+//**** LOOPS ****//
+
+for (let i=0; i<10; i++){
+    // i é designado para falar quantas vezes vai repetir e para usar no loop
+    //i<10 impõe uma quantidade maxima de repetições no loop
+    // 1++ faz o i aumentar 1 a cada repetição, para que ele repita aumentando até atingir o limite imposto
+    console.log(i);
+}
