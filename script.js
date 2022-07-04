@@ -305,3 +305,66 @@ function calcularVetor(vetor, numeron){
 }
     
 calcularVetor([1,2,10], 2);
+
+function somarSubVetores(vetor){
+    let resultado = []
+    for(let indice=0; indice < vetor.length; indice++){
+        subvetor = vetor[indice]
+        let soma = 0
+        for(let subindice=0;subindice<subvetor.length; subindice++){
+            soma = soma + subvetor[subindice]
+        }
+        resultado[indice] = soma;
+    }
+    console.log(resultado);
+    return resultado
+}
+
+somarSubVetores([[0, 2, 6], [8, 45], [56, 1213, 2, 17]])
+
+function testeFinal(umaString, umNumero){
+    if (umaString == "mundojs"){
+        console.log('MundoJS')
+        return umNumero
+    }
+    else if (umaString == "soma"){
+        let resultado = (umNumero/2) + (umNumero*umNumero)
+        return resultado
+    }
+    else if (umaString == "vetor"){
+        let vetor = []
+        for(let i = 0; i<5; i++){
+            let lapes = (i*2)
+            console.log(lapes);
+            vetor[i]= umNumero + lapes
+            vetor[0] = umNumero
+        }
+        return vetor;
+    }
+    else if (umaString == "booleano"){
+        let vetor = []
+        let soma = 0
+        for(let i = 0; i<5; i++){
+            let lapes = (i*2)
+            console.log(lapes);
+            vetor[i]= umNumero + lapes
+            vetor[0] = umNumero
+            soma = soma + vetor[i]
+        }
+        if (soma > 35){
+            return true
+        }
+        else {
+            return false
+        }
+    }
+    else {
+        return (-1)
+    }
+}
+
+console.log(testeFinal("mundojs", 4));
+console.log(testeFinal("soma", 4));
+console.log(testeFinal("vetor", 4));
+console.log(testeFinal("booleano", 4));
+console.log(testeFinal(true, 4));
