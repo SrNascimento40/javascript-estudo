@@ -48,16 +48,16 @@ console.log(x);
 //symbol
 //não
 //object = dado composto por outros tipos
-let carro = {
+let carron = {
     rodas: 4,
     portas: 2,
     nome: 'mercedes',
     vendendo: true
 }
-carro.portas = 4;
-console.log(carro.portas);
-carro["portas"] = 3
-console.log(carro.portas);
+carron.portas = 4;
+console.log(carron.portas);
+carron["portas"] = 3
+console.log(carron.portas);
 
 
 //function => operações que serão executadas
@@ -238,9 +238,70 @@ function mudarPropriedade(nomePropriedade, novoValor){
 
 //**** LOOPS ****//
 
+//for
+
 for (let i=0; i<10; i++){
     // i é designado para falar quantas vezes vai repetir e para usar no loop
     //i<10 impõe uma quantidade maxima de repetições no loop
     // 1++ faz o i aumentar 1 a cada repetição, para que ele repita aumentando até atingir o limite imposto
     console.log(i);
 }
+
+//for of
+// loop para iterar elementos de uma lista
+
+let dias = ["segunda", "terca", "quarta", "quinta", "sexta"]
+
+for (let dia of dias) {
+    console.log(dia);
+}
+//permite trabalhar com item por item
+
+//while
+//quando uma condição for verdadeira ele vai continuar executando
+var numbe = 0
+while (numbe < 10) {
+    var numbe = numbe + 1
+    console.log(numbe);
+}
+
+//se não definir uma forma do loop acabar ele será infinito
+
+//do while
+//executa e testa
+
+let namero = 1
+
+do {
+    console.log(namero);
+    namero++;
+}
+while (namero<5);
+//mesma coisa, só usa o que ficar mais fácil de entender
+
+while (1<6) {
+    console.log("infinito");
+    break
+}
+
+for (let dia of dias) {
+    if (dia=="quinta") {
+        continue
+        //esse continue faz o loop pular o resto e ir direto pra próxima repetição
+    }
+    console.log(dia);
+}
+
+
+
+function calcularVetor(vetor, numeron){
+    for (let i = 0; i < vetor.length; i++){
+        if (vetor[i] > 5) {
+            vetor[i]=vetor[i]*numeron;
+        }
+    }
+    console.log(vetor);
+    return vetor;//Seu código aqui
+}
+    
+calcularVetor([1,2,10], 2);
